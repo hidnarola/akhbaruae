@@ -1,0 +1,12 @@
+.blogPostImg {
+	position: relative;
+	min-height: 250px;
+}
+.blogPostImg img {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.blogPostItem p.postText {
+	height: 72px;
+}
