@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="uk">
     <head>
-        <title>Francoise - Home grid</title>
+        <title>AkhbarUAE - Home</title>
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
         <base href="<?php echo base_url(); ?>">
@@ -11,7 +11,8 @@
         <link rel="stylesheet" type="text/css" href="assets/css/adaptive.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="assets/css/custom.css" media="screen" />
     </head>
-    <body class="page-grid">
+    <!--<body class="page-grid">-->
+    <body class="single-post">
         <header id="header">
             <div class="siteHeader">
                 <div class="wrapper clear">
@@ -20,7 +21,7 @@
                     </a>
                     <ul class="mainMenu clear">
                         <li>
-                            <a href="index.html">home</a>
+                            <a href="">home</a>
                             <ul>
                                 <li><a href="index-slider.html">Home slider</a></li>
                                 <li><a href="index-fullsize.html">Home fullsize</a></li>
@@ -31,7 +32,7 @@
                                 <li><a href="single-post.html">Single post</a></li>
                             </ul>
                         </li>
-                        <li><a href="category.html">lifestyle</a></li>
+<!--                        <li><a href="category.html">lifestyle</a></li>
                         <li>
                             <a href="category.html">travel</a>
                             <ul>
@@ -50,9 +51,9 @@
                         <li><a href="category.html">fashion</a></li>
                         <li><a href="category.html">inspiration</a></li>
                         <li><a href="about.html">about</a></li>
-                        <li><a href="contact.html">contact</a></li>
+                        <li><a href="contact.html">contact</a></li>-->
                     </ul>
-                    <div class="pull-right clear">
+<!--                    <div class="pull-right clear">
                         <div class="headerSocialLinks clear">
                             <a href="#"><i class="fa fa-instagram"></i></a>
                             <a href="#"><i class="fa fa-facebook"></i></a>
@@ -62,7 +63,7 @@
                             <a href="#"><i class="fa fa-google-plus"></i></a>
                         </div>
                         <div class="searchIcon"></div>
-                    </div>
+                    </div>-->
                     <span class="showMobileMenu">
                         <span></span>
                         <span></span>
@@ -79,7 +80,7 @@
             </div>
         </section>
         <footer id="footer">
-            <div class="footerSocial">
+<!--            <div class="footerSocial">
                 <div class="wrapper clear">
                     <div class="footerSocialItem">
                         <a href="#" class="">
@@ -124,7 +125,7 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <div class="wrapper">
                 <ul class="footerMenu">
                     <li><a href="category.html">Lyfestyle</a></li>
@@ -201,8 +202,8 @@
         <script type="text/javascript" src="assets/js/jquery.dotdotdot.min.js"></script>
         <script type="text/javascript" src="assets/js/script.js"></script>
         <script type="text/javascript">
-            $(function() {
-                $('.blogPostItem p.postText').dotdotdot();
+            $(function () {
+                $('.blogPostItem p.postText,.blogPostItem h3.postTitle').dotdotdot();
             });
         </script>
     </body>

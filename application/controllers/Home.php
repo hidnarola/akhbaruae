@@ -6,6 +6,7 @@ class Home extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+        $this->load->model('News_model');
     }
 
     public function index() {
@@ -13,16 +14,33 @@ class Home extends CI_Controller {
         
         Webhose::config("cb2e92ec-e932-4e97-a0c9-01f659fb8b85");
         $params = array(
-            "q" => "United States",
             "size" => "10",
+//            "from" => "1",
             "sort" => "relevancy",
             "language" => "arabic"
         );
         $result = $data['posts'] = Webhose::query("filterWebData", $params);
 //        $this->print_filterwebdata_titles($result);
-         
         
         $this->template->load('default', 'Home/index', $data);
+    }
+    
+    public function test() {
+        $data['posts'] = $posts = $this->News_model->get_news();
+        $data['main_post'] = $posts[0];
+        $this->template->load('default', 'Home/test', $data);
+    }
+    
+    public function news($id) {
+        $posts = $this->News_model->get_news($id);
+        if(count($posts) == 1){
+            $data['post'] = $posts[0];
+//            echo '<pre>';
+//            print_r($data);exit;
+            $this->template->load('default', 'Home/detail', $data);
+        } else {
+            redirect('/');
+        }
     }
     
     public function print_filterwebdata_titles($api_response) {

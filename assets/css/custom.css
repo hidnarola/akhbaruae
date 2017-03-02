@@ -10,3 +10,32 @@
 .blogPostItem p.postText {
 	height: 72px;
 }
+.blogPostItem h3.postTitle {
+	height: 54px;
+}
+.homeV1PostDesc{
+	top: 75%;
+}
+.overlayBox:hover, .overlayBox:hover {
+    background: rgba(255,255,255,0.7);
+}
+.container {
+	padding-bottom: 143px;
+}
+#footer {
+	height: 143px;
+}
+#footer .wrapper{
+	margin-top: 59px;
+}
+.newsSocial {
+	background: #222222;
+	padding-right: 30px;
+	padding-left: 30px;
+}
+.newsSocial .footerSocialItem {
+	width: 185px;
+}
+.comment-form-author, .comment-form-email, .comment-form-url {
+	width: 370px;
+}
