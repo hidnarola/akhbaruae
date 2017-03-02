@@ -28,6 +28,6 @@
 <div class="postPagination">
     <ul class="clear">
         <li class="newPosts"><a href="#">New posts</a></li>
-        <li class="olderPosts"><a href="">Older posts</a></li>
+        <li class="olderPosts"><a href="#">Older posts</a></li>
     </ul>
 </div>

@@ -81,14 +81,14 @@
                     </div>
                     <div class="reply">
                         <div>
-                            <a class="comment-reply-link" href="">Reply</a>
+                            <a class="comment-reply-link" href="#">Reply</a>
                         </div>
                     </div>
                 </footer>
                 <div class="comment-wrapper">
                     <cite class="fn">Joan Gonzales</cite>
                     <span class="comment-metadata">
-                        <a href="">
+                        <a href="#">
                             <time datetime="2015-05-05">July 7, 2014 at 9:25 pm</time>
                         </a>
                     </span>
@@ -107,14 +107,14 @@
                             </div>
                             <div class="reply">
                                 <div>
-                                    <a class="comment-reply-link" href="">Reply</a>
+                                    <a class="comment-reply-link" href="#">Reply</a>
                                 </div>
                             </div>
                         </footer>
                         <div class="comment-wrapper">
                             <cite class="fn">Alice Ryan</cite>
                             <span class="comment-metadata">
-                                <a href="">
+                                <a href="#">
                                     <time datetime="2015-05-05">July 7, 2014 at 9:25 pm</time>
                                 </a>
                             </span>
@@ -135,14 +135,14 @@
                     </div>
                     <div class="reply"> 
                         <div>
-                            <a class="comment-reply-link" href="">Reply</a>
+                            <a class="comment-reply-link" href="#">Reply</a>
                         </div>
                     </div>
                 </footer>
                 <div class="comment-wrapper">
                     <cite class="fn">Catherine Taylor</cite>
                     <span class="comment-metadata">
-                        <a href="">
+                        <a href="#">
                             <time datetime="2015-05-05">July 7, 2014 at 9:25 pm</time>
                         </a>
                     </span>
