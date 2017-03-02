@@ -1,4 +1,5 @@
 <a href="news/<?php echo $main_post['id']; ?>" class="homeV1MainPost">
+    <img src="<?php echo ($main_post['image'] != '') ? $main_post['image'] : 'assets/images/main_post.jpg'; ?>" alt="Francoise img">
     <div class="overlayBox">
         <div class="homeV1PostDesc">
             <div class="postTime"><?php echo $main_post['published']; ?></div>
