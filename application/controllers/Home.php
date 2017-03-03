@@ -11,7 +11,6 @@ class Home extends CI_Controller {
 
     public function index() {
         $this->load->library('webhose');
-        
         Webhose::config("cb2e92ec-e932-4e97-a0c9-01f659fb8b85");
         $params = array(
             "size" => "10",
@@ -21,7 +20,7 @@ class Home extends CI_Controller {
         );
         $result = $data['posts'] = Webhose::query("filterWebData", $params);
 //        $this->print_filterwebdata_titles($result);
-        
+
         $this->template->load('default', 'Home/index', $data);
     }
     
