@@ -21,7 +21,7 @@
                     </a>
                     <ul class="mainMenu clear">
                         <li>
-                            <a href="">home</a>
+                            <a href="">Home</a>
                             <ul>
                                 <li><a href="index-slider.html">Home slider</a></li>
                                 <li><a href="index-fullsize.html">Home fullsize</a></li>
@@ -32,6 +32,7 @@
                                 <li><a href="single-post.html">Single post</a></li>
                             </ul>
                         </li>
+                        <li><a href="news">News</a></li>
 <!--                        <li><a href="category.html">lifestyle</a></li>
                         <li>
                             <a href="category.html">travel</a>

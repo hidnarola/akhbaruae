@@ -72,12 +72,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $active_group = 'default';
 $query_builder = TRUE;
+if($_SERVER['HTTP_HOST'] == '192.168.1.66' || $_SERVER['HTTP_HOST'] == 'localhost'){
+    $host_name = '127.0.0.1';
+    $username = 'root';
+    $password = '';
+} else if($_SERVER['HTTP_HOST'] == 'clientapp.narola.online'){
+    $host_name = '192.168.1.201';
+    $username = 'akhbar_uae';
+    $password = '1p0qEUYFqCeQ6cF';
+} else {
+    $host_name = 'localhost';
+    $username = 'root';
+    $password = 'r740e37A1O269fP';
+}
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
+	'hostname' => $host_name,
+	'username' => $username,
+	'password' => $password,
 	'database' => 'akhbar_uae',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

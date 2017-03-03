@@ -1,4 +1,5 @@
 <a href="news/<?php echo $main_post['id']; ?>" class="homeV1MainPost">
+    <img src="<?php echo ($main_post['image'] != '') ? $main_post['image'] : 'assets/images/main_post.jpg'; ?>" alt="Francoise img">
     <div class="overlayBox">
         <div class="homeV1PostDesc">
             <div class="postTime"><?php echo $main_post['published']; ?></div>
@@ -27,6 +28,6 @@
 <div class="postPagination">
     <ul class="clear">
         <li class="newPosts"><a href="#">New posts</a></li>
-        <li class="olderPosts"><a href="">Older posts</a></li>
+        <li class="olderPosts"><a href="#">Older posts</a></li>
     </ul>
 </div>
