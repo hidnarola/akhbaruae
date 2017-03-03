@@ -12,6 +12,59 @@ function pr($arr, $exit = 0) {
     }
 }
 
+/**
+     * This function used to add or update records in particular table based on condition. 
+     * @param String $mode
+     * @param String $table
+     * @param Array $dataArr            
+     * @param Array $condition
+     * @return Integer $affected_row
+     * @author pav
+     * */
+function common_insert_update($mode = '', $table = '', $dataArr = '', $condition = '') {
+    $CI = & get_instance();
+    if ($mode == 'insert') {
+        $CI->db->insert($table, $dataArr);
+    } else if ($mode == 'update') {
+        $CI->db->where($condition);
+        $CI->db->update($table, $dataArr);
+    }
+    $affected_row = $CI->db->affected_rows();
+    return $affected_row;
+}
+
+/**
+     * This function returns the table contents based on data. 
+     * @param String $table
+     * @param Array $condition          
+     * @param Array $sortArr
+     * @return Array
+     * @author pav
+     * */
+function get_all_details($table = '', $condition = '', $sortArr = '', $limitArr = '') {
+    $CI = & get_instance();
+    if ($sortArr != '' && is_array($sortArr)) {
+        foreach ($sortArr as $sortRow) {
+            if (is_array($sortRow)) {
+                $CI->db->order_by($sortRow ['field'], $sortRow ['type']);
+            }
+        }
+    }
+    if ($limitArr != '') {
+        return $CI->db->get_where($table, $condition, $limitArr['l1'], $limitArr['l2']);
+    } else {
+        return $CI->db->get_where($table, $condition);
+    }
+}
+
+function recursive_append_children($arr, $children){
+    foreach($arr as $key => $page){
+        if(isset($children[$key]))
+            $arr[$key]['children'] = recursive_append_children($children[$key], $children);
+    }
+    return $arr;
+}
+
 function upload_image($image_name, $image_path) {
     $CI = & get_instance();
     $extension = explode('/', $_FILES[$image_name]['type']);

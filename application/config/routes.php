@@ -55,6 +55,7 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['news'] = 'news/index';
 $route['news/(:any)'] = 'news/detail/$1';
+$route['news/comment/(:any)'] = 'news/add_comment/$1'; 
 
 $route['admin'] = 'admin/home';
 $route['admin/pages/add'] = 'admin/pages/edit';
