@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="assets/css/style.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="assets/css/adaptive.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="assets/css/custom.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="assets/css/jquery.modal.css" media="screen" />
         <script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
     </head>
     <!--<body class="page-grid">-->
@@ -201,6 +202,7 @@
         <script type="text/javascript" src="assets/js/jquery.bxslider.min.js"></script>
         <script type="text/javascript" src="assets/js/masonry.pkgd.min.js"></script>
         <script type="text/javascript" src="assets/js/jquery.dotdotdot.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.modal.js" charset="utf-8"></script>
         <script type="text/javascript" src="assets/js/script.js"></script>
         <script type="text/javascript">
             $(function () {
