@@ -107,3 +107,57 @@
 .blogPostBox .blogPostItem:nth-child(3n+3){
 	margin-left: 0;
 }
+.commentsBox{
+	direction: rtl;
+	text-align: right;
+}
+.comment-wrapper{
+	text-align: right;
+	margin-right: 26px;
+	display: block;
+}
+.reply{
+	left: 0;
+	right: auto;
+}
+.comment-meta{width: 58px;}
+.commentList li.depth-2 .comment-body {padding-right: 60px;padding-left: 0;}
+.commentList li.depth-3 .comment-body {padding-right: 120px;padding-left: 0;}
+.commentList li.depth-4 .comment-body {padding-right: 180px;padding-left: 0;}
+.commentsBox.modal .comment-respond{
+	direction: rtl;
+	text-align: right;
+}
+.commentsBox.modal .comment-form-author,
+.commentsBox.modal .comment-form-email,
+.commentsBox.modal .comment-form-url {
+	float: right;
+}
+.jquery-modal.blocker.current{
+	z-index: 99999;
+}
+/*
+.comment-list.commentList,
+.comment-list.commentList li{
+	float: right;
+	width: 100%;
+}
+article.comment-body{
+	float: right;
+	display: block;
+}
+.comment-meta{
+	float: right;
+	display: block;
+	width: auto;
+}
+.reply{
+	left: 0;
+	right: auto;
+}
+.comment-wrapper{
+	float: right;
+    text-align: right;
+    margin-right: 26px;
+    display: block;
+}*/

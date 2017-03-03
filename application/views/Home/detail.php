@@ -124,6 +124,7 @@
     </div>
 </div>
 
+<!-- Comment Box -->
 <div id="comments" class="commentsBox">
     <h2 class="comments-title"><?php echo count($commArr); ?> comments</h2>
     <ol class="comment-list commentList">
@@ -160,8 +161,10 @@
         </form>
     </div>
 </div>
+<!-- /Comment Box -->
 
-<div id="reply-form" class="commentsBox">
+<!-- Reply Popup -->
+<div id="reply-form" class="commentsBox" style="display:none">
     <div id="respond" class="comment-respond">
         <h3 id="reply-title" class="comment-reply-title">POST A COMMENT</h3>
         <form id="commentform" action="news/add_comment/<?php echo $post['id']; ?>" method="post" class="comment-form" novalidate="" >
@@ -188,12 +191,12 @@
             </p>
             <p class="form-submit clear">
                 <input type="hidden" name="hidden_post_id" id="hidden_post_id" value="">
-                <input id="submit" class="submit" type="submit" value="Post comment" name="submit">
+                <input id="submit" class="submit" type="submit" value="Post Reply" name="submit">
             </p>
         </form>
     </div>
 </div>
-
+<!-- /Reply Popup -->
 <script>
     function open_modal(id){
         $('#hidden_post_id').val(id);
