@@ -15,6 +15,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $(document).on('click', '.my_pagination > a', function(){
+            $('#loader').fadeIn();
             var page = $(this).attr('data-page');
             console.log(page);
             console.log('<?php echo base_url(); ?>more_news/' + page);
@@ -24,6 +25,7 @@
                 dataType: 'JSON',
                 async: false,
                 success: function (data) {
+                    $('#loader').fadeIn();
                     if (data.success == 1) {
                         $(document).find('.blogPostWrapper').html(data.html);
                         $(document).find('.blogPostItem p.postText,.blogPostItem h3.postTitle').dotdotdot();

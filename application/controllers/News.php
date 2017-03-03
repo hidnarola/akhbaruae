@@ -61,9 +61,8 @@ class News extends CI_Controller {
         $posts = $this->News_model->get_news($id);
         if (count($posts) == 1) {
             $data['post'] = $posts[0];
-            $post_comments = get_all_details('comments',array('news_id'=>$posts[0]['id']))->result_array();
+            $post_comments = $this->News_model->get_commnets($posts[0]['id']);
             $data['commArr'] = $this->get_replies(0, $post_comments);
-            // pr($data['commArr'],1);
             $this->template->load('default', 'Home/detail', $data);
         } else {
             redirect('/');
