@@ -26,6 +26,19 @@ class News_model extends CI_Model {
         $news = $this->db->get('news');
         return $news->result_array();
     }
+    
+    public function filter_news($filter_array, $is_count = 0, $start = 0, $limit = 10) {
+        $this->db->join('social', 'social.news_id = news.id', 'LEFT');
+        if( $is_count == 1 ){
+            $news = $this->db->get('news');
+            return count($news->result_array());
+        } else {
+            $start_record = $start * $limit;
+            $this->db->limit($limit, $start_record);
+            $news = $this->db->get('news');
+            return $news->result_array();
+        }
+    }
 
     public function manage_news($news_obj, $social_obj, $news_id = '') {
         if ($news_id != '') {
