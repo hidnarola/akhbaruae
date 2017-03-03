@@ -41,6 +41,9 @@
 .comment-form-author, .comment-form-email, .comment-form-url {
 	width: 370px;
 }
+.comment-form-comment{ width:100%; float:left }
+.custom_error_msg_style{ color:red;font-size:10px }
+.custom_error_msg_border{ border:1px solid red !important; }
 #loader{
     position:fixed;
     left: 0;

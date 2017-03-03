@@ -68,6 +68,12 @@ class News_model extends CI_Model {
         }
     }
 
+    public function get_commnets($news_id) {
+        $this->db->where('news_id', $news_id);
+        $comments = $this->db->get('comments');
+        return $comments->result_array();
+    }
+    
     public function get_result($table, $condition = null) {
         $this->db->select('*');
         if (!is_null($condition)) {

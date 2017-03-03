@@ -1,3 +1,42 @@
+<?php function display_replies($temp){ ?>
+    <ol class="children">
+        <?php foreach($temp as $k => $v){ ?>
+            <li id="comment-<?php echo $k+1; ?>" class="comment byuser depth-2">
+                <a id="view-comment-3" class="comment-anchor"></a>
+                <article id="div-comment-3" class="comment-body">
+                    <footer class="comment-meta">
+                        <div class="comment-author vcard">
+                            <img  width="56" height="56" src="http://placehold.it/56x56/8acace/ffffff" alt="Francoise img">
+                        </div>
+                        <div class="reply">
+                            <div>
+                                <a class="comment-reply-link" href="#">Reply</a>
+                            </div>
+                        </div>
+                    </footer>
+                    <div class="comment-wrapper">
+                        <cite class="fn"><?php echo $v['author_name']; ?></cite>
+                        <span class="comment-metadata">
+                            <a href="#">
+                                <time datetime="2015-05-05"><?php echo date('F d, Y',strtotime($v['created'])).' at '.date('g:i a',strtotime($v['created'])); ?></time>
+                            </a>
+                        </span>
+                        <div class="comment-content">
+                            <p><?php echo $v['author_comment']; ?></p>
+                        </div>
+                    </div>
+                </article>
+            </li>
+        <?php 
+            if(count($v['replies'])>0){
+                display_replies($v['replies']);
+            }
+        } ?>
+    </ol>
+<?php
+    }
+?>
+
 <!--<div class="contentLeft">-->
 <div class="singlePostMeta">
     <div class="singlePostTime"><?php echo date('d.m.Y', strtotime($post['published'])); ?></div>
@@ -70,9 +109,39 @@
 </div>
 
 <div id="comments" class="commentsBox">
-    <h2 class="comments-title">2 comments</h2>
+    <h2 class="comments-title"><?php echo count($commArr); ?> comments</h2>
     <ol class="comment-list commentList">
-        <li id="comment-2" class="comment byuser depth-1 parent">
+        <?php display_replies($commArr); ?>
+        <!-- <?php foreach($commArr as $k => $v){ ?>
+            <li id="comment-4" class="comment byuser depth-1">
+                <a id="view-comment-4" class="comment-anchor"></a>
+                <article id="div-comment-4" class="comment-body">
+                    <footer class="comment-meta">
+                        <div class="comment-author vcard">
+                            <img  width="56" height="56" src="http://placehold.it/56x56/8acace/ffffff" alt="Francoise img">
+                        </div>
+                        <div class="reply"> 
+                            <div>
+                                <a class="comment-reply-link" href="#">Reply</a>
+                            </div>
+                        </div>
+                    </footer>
+                    <div class="comment-wrapper">
+                        <cite class="fn"><?php echo $v['author_name']; ?></cite>
+                        <span class="comment-metadata">
+                            <a href="#">
+                                <time datetime="2015-05-05"><?php echo date('F d, Y',strtotime($v['created'])).' at '.date('g:i a',strtotime($v['created'])); ?></time>
+                            </a>
+                        </span>
+                        <div class="comment-content">
+                            <p><?php echo $v['author_comment']; ?></p>
+                        </div>
+                    </div>
+                </article>
+            </li>
+        <?php } ?> -->
+    
+        <!-- <li id="comment-2" class="comment byuser depth-1 parent">
             <a id="view-comment-2" class="comment-anchor"></a>
             <article id="div-comment-2" class="comment-body">
                 <footer class="comment-meta">
@@ -151,28 +220,32 @@
                     </div>
                 </div>
             </article>
-        </li>
+        </li> -->
     </ol>
 
     <div id="respond" class="comment-respond">
         <h3 id="reply-title" class="comment-reply-title">POST A COMMENT</h3>
-        <form id="commentform" class="comment-form" novalidate="" method="post" action="news/add_comment/<?php echo $post['id']; ?>">
+        <form id="commentform" action="news/add_comment/<?php echo $post['id']; ?>" method="post" class="comment-form" novalidate="" onSubmit="return comment_form_validate()" >
             <p class="comment-form-author">
                 <label>Name*</label>
-                <input id="author" type="text" placeholder="" aria-required="true" size="30" value="" name="author">
+                <input id="txt_author_name" type="text" class="<?php if(form_error('txt_author_name')!=''){ echo 'custom_error_msg_border'; } ?>" aria-required="true" size="30" value="<?php echo set_value('txt_author_name'); ?>" name="txt_author_name">
+                <font id="txt_author_name-error"><?php echo form_error('txt_author_name') ?></font>
             </p>
             <p class="comment-form-email">
                 <label>Email*</label>
-                <input id="email" type="text" placeholder="" aria-required="true" size="30" value="" name="email">
+                <input id="txt_author_email" type="text" class="<?php if(form_error('txt_author_email')!=''){ echo 'custom_error_msg_border'; } ?>" placeholder="" aria-required="true" size="30" value="<?php echo set_value('txt_author_email'); ?>" name="txt_author_email">
+                <font id="txt_author_email-error"><?php echo form_error('txt_author_email') ?></font>
             </p>
             <p class="comment-form-url">
                 <label>Website</label>
-                <input id="url" type="text" placeholder="" size="30" value="" name="url">
+                <input id="txt_author_website" type="text" placeholder="" size="30" value="<?php echo set_value('txt_author_website'); ?>" name="txt_author_website">
+                <?php echo form_error('txt_author_website') ?>
             </p>
 
             <p class="comment-form-comment">
                 <label>Your comment</label>
-                <textarea id="comment" placeholder="" aria-required="true" rows="8" cols="45" name="comment"></textarea>
+                <textarea id="txt_author_comment" placeholder="" aria-required="true" rows="8" cols="45" name="txt_author_comment"><?php echo set_value('txt_author_comment'); ?></textarea>
+                <?php echo form_error('txt_author_comment') ?>
             </p>
             <p class="form-submit clear">
                 <input id="submit" class="submit" type="submit" value="Post comment" name="submit">
@@ -180,44 +253,36 @@
         </form>
     </div>
 </div>
+<script>
+    function comment_form_validate(){
+        var err_cnt = 0;
+        var txt_author_name = $('#txt_author_name').val();
+        var txt_author_email = $('#txt_author_email').val();
+        var txt_author_website = $('#txt_author_website').val();
+        var txt_author_comment = $('#txt_author_comment').val();
 
-<!-- <div id="commentModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">POST A COMMENT</h4>
-            </div>
-            <div class="modal-body">
-                <div id="respond" class="comment-respond">
-                    <form id="commentform" class="comment-form" novalidate="" method="post" action="http://demoasana.te.ua/wp-comments-post.php">
-                        <p class="comment-form-author">
-                            <label>Name*</label>
-                            <input id="author" type="text" placeholder="" aria-required="true" size="30" value="" name="author">
-                        </p>
-                        <p class="comment-form-email">
-                            <label>Email*</label>
-                            <input id="email" type="text" placeholder="" aria-required="true" size="30" value="" name="email">
-                        </p>
-                        <p class="comment-form-url">
-                            <label>Website</label>
-                            <input id="url" type="text" placeholder="" size="30" value="" name="url">
-                        </p>
+        if(txt_author_name==''){
+            $('#txt_author_name').addClass('custom_error_msg_border');
+            $('#txt_author_name-error').html('<span class="custom_error_msg_style">This Name field is required.</span>');
+            err_cnt = 1;
+        }else{
+            $('#txt_author_name').removeClass('custom_error_msg_border');
+            $('#txt_author_name-error').html('');
+        }
 
-                        <p class="comment-form-comment">
-                            <label>Your comment</label>
-                            <textarea id="comment" placeholder="" aria-required="true" rows="8" cols="45" name="comment"></textarea>
-                        </p>
-                        <p class="form-submit clear">
-                            <input id="submit" class="submit" type="submit" value="Post comment" name="submit">
-                        </p>
-                    </form>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div> -->
-<!--</div>-->
+        if(txt_author_email==''){
+            $('#txt_author_email').addClass('custom_error_msg_border');
+            $('#txt_author_email-error').html('<span class="custom_error_msg_style">This Name field is required.</span>');
+            err_cnt = 1;
+        }else{
+            $('#txt_author_email').removeClass('custom_error_msg_border');
+            $('#txt_author_email-error').html('');
+        }
+
+        if(err_cnt==0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+</script>
