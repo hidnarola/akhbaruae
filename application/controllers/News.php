@@ -65,4 +65,22 @@ class News extends CI_Controller {
         }
     }
 
+    /**
+     * This function is used to add new comments for particular news
+     * @params : $id -> integer
+     * @return
+     * @author : pav
+    */
+    public function add_comment($id){
+        $posts = $this->News_model->get_news($id);
+        $this->form_validation->set_rules('txt_name', 'Name', 'trim|required');
+        $this->form_validation->set_rules('txt_email', 'Email', 'trim|required|valid_email');
+        if ($this->form_validation->run() == FALSE){
+             $this->template->load('default', 'Home/detail', $data);
+        }else{
+
+        }
+
+    }
+
 }

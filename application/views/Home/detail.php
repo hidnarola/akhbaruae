@@ -153,9 +153,10 @@
             </article>
         </li>
     </ol>
+
     <div id="respond" class="comment-respond">
         <h3 id="reply-title" class="comment-reply-title">POST A COMMENT</h3>
-        <form id="commentform" class="comment-form" novalidate="" method="post" action="http://demoasana.te.ua/wp-comments-post.php">
+        <form id="commentform" class="comment-form" novalidate="" method="post" action="news/add_comment/<?php echo $post['id']; ?>">
             <p class="comment-form-author">
                 <label>Name*</label>
                 <input id="author" type="text" placeholder="" aria-required="true" size="30" value="" name="author">
@@ -179,4 +180,44 @@
         </form>
     </div>
 </div>
+
+<!-- <div id="commentModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">POST A COMMENT</h4>
+            </div>
+            <div class="modal-body">
+                <div id="respond" class="comment-respond">
+                    <form id="commentform" class="comment-form" novalidate="" method="post" action="http://demoasana.te.ua/wp-comments-post.php">
+                        <p class="comment-form-author">
+                            <label>Name*</label>
+                            <input id="author" type="text" placeholder="" aria-required="true" size="30" value="" name="author">
+                        </p>
+                        <p class="comment-form-email">
+                            <label>Email*</label>
+                            <input id="email" type="text" placeholder="" aria-required="true" size="30" value="" name="email">
+                        </p>
+                        <p class="comment-form-url">
+                            <label>Website</label>
+                            <input id="url" type="text" placeholder="" size="30" value="" name="url">
+                        </p>
+
+                        <p class="comment-form-comment">
+                            <label>Your comment</label>
+                            <textarea id="comment" placeholder="" aria-required="true" rows="8" cols="45" name="comment"></textarea>
+                        </p>
+                        <p class="form-submit clear">
+                            <input id="submit" class="submit" type="submit" value="Post comment" name="submit">
+                        </p>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div> -->
 <!--</div>-->
