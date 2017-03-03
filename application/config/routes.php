@@ -55,3 +55,9 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['news'] = 'news/index';
 $route['news/(:any)'] = 'news/detail/$1';
+
+$route['admin'] = 'admin/home';
+$route['admin/pages/add'] = 'admin/pages/edit';
+$route['admin/pages/delete/(:any)'] = 'admin/pages/action/delete/$1';
+$route['admin/pages/activate/(:any)'] = 'admin/pages/action/activate/$1';
+$route['admin/logout'] = 'admin/login/logout';

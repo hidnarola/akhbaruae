@@ -11,7 +11,6 @@ class News extends CI_Controller {
 
     public function index() {
         $data['posts'] = $posts = $this->News_model->get_news();
-        $data['main_post'] = $posts[0];
         $this->template->load('default', 'Home/test', $data);
     }
 

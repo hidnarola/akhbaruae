@@ -1,4 +1,4 @@
-<?php if(!empty($posts)){ ?>
+<?php if (isset($posts->posts)){ ?>
 <a target="_blank" href="<?php echo $posts->posts[0]->url; ?>" class="homeV1MainPost">
     <img src="<?php echo ($posts->posts[0]->thread->main_image != '') ? $posts->posts[0]->thread->main_image : 'assets/images/main_post.jpg'; ?>" alt="Francoise img">
     <div class="overlayBox">
@@ -8,6 +8,7 @@
         </div>
     </div>
 </a>
+<?php } ?>
 <div class="blogPostBox clear">
     <?php
     if (isset($posts->posts)){
@@ -33,4 +34,4 @@
         <li class="newPosts"><a href="#">New posts</a></li>
         <li class="olderPosts"><a href="#">Older posts</a></li>
     </ul>
-</div><?php } ?>
+</div>

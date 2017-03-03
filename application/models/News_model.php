@@ -16,7 +16,7 @@ class News_model extends CI_Model {
         $news = $this->db->get('news');
         return $news->result_array();
     }
-    
+
     public function get_news($id = '') {
         if ($id != '') {
             $this->db->where('news.id', $id);
@@ -26,7 +26,7 @@ class News_model extends CI_Model {
         $news = $this->db->get('news');
         return $news->result_array();
     }
-    
+
     public function manage_news($news_obj, $social_obj, $news_id = '') {
         if ($news_id != '') {
             $this->db->where('id', $news_id);
@@ -53,6 +53,15 @@ class News_model extends CI_Model {
                 return 0;
             }
         }
+    }
+
+    public function get_result($table, $condition = null) {
+        $this->db->select('*');
+        if (!is_null($condition)) {
+            $this->db->where($condition);
+        }
+        $query = $this->db->get($table);
+        return $query->result_array();
     }
 
 }
