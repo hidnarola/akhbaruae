@@ -1,12 +1,14 @@
-<a href="news/<?php echo $main_post['id']; ?>" class="homeV1MainPost">
-    <img src="<?php echo ($main_post['image'] != '') ? $main_post['image'] : 'assets/images/main_post.jpg'; ?>" alt="Francoise img">
+<?php if (!empty($posts)){ ?>
+<a href="news/<?php echo $posts[0]['id']; ?>" class="homeV1MainPost">
+    <img src="<?php echo ($posts[0]['image'] != '') ? $posts[0]['image'] : 'assets/images/main_post.jpg'; ?>" alt="Francoise img">
     <div class="overlayBox">
         <div class="homeV1PostDesc">
-            <div class="postTime"><?php echo $main_post['published']; ?></div>
-            <h3><?php echo $main_post['title']; ?></h3>
+            <div class="postTime"><?php echo $posts[0]['published']; ?></div>
+            <h3><?php echo $posts[0]['title']; ?></h3>
         </div>
     </div>
 </a>
+<?php } ?>
 <div class="blogPostBox clear">
     <?php
         foreach ($posts as $key => $post) {

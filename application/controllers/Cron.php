@@ -8,7 +8,7 @@ class Cron extends CI_Controller {
         parent::__construct();
         $this->load->model('News_model');
         $this->load->library('webhose');
-        Webhose::config("cb2e92ec-e932-4e97-a0c9-01f659fb8b85");
+        Webhose::config("072da86e-2191-4843-b2c9-bd074f4824f0");
     }
 
     public function index() {

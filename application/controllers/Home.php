@@ -12,7 +12,7 @@ class Home extends CI_Controller {
     public function index() {
         $this->load->library('webhose');
         
-        Webhose::config("cb2e92ec-e932-4e97-a0c9-01f659fb8b85");
+        Webhose::config("072da86e-2191-4843-b2c9-bd074f4824f0");
         $params = array(
             "size" => "10",
 //            "from" => "1",
@@ -20,7 +20,7 @@ class Home extends CI_Controller {
             "language" => "arabic"
         );
         $result = $data['posts'] = Webhose::query("filterWebData", $params);
-//        $this->print_filterwebdata_titles($result);
+        $this->print_filterwebdata_titles($result);
         
         $this->template->load('default', 'Home/index', $data);
     }
