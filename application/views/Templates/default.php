@@ -198,6 +198,9 @@
                 </form>
             </div>
         </div>
+        <div id ="loader" style="display:none;">
+            <i class="fa fa-spinner fa-spin fa-5x fa-fw"></i>
+        </div>
         <script type="text/javascript" src="assets/js/jquery.bxslider.min.js"></script>
         <script type="text/javascript" src="assets/js/masonry.pkgd.min.js"></script>
         <script type="text/javascript" src="assets/js/jquery.dotdotdot.min.js"></script>

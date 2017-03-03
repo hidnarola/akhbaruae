@@ -41,3 +41,66 @@
 .comment-form-author, .comment-form-email, .comment-form-url {
 	width: 370px;
 }
+#loader{
+    position:fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height:100%;
+    z-index:99999;
+    text-align:center;
+    vertical-align:middle;
+    filter: Alpha(Opacity=70);
+    opacity: 0.90;
+    background-color: #000000;
+    padding-top:320px;
+}
+#loader i{
+	color: #B50000;
+}
+.singlePostWrap p{
+	white-space: pre-line;
+	word-wrap: break-word;
+	font-size: 17px;
+	line-height: 2;
+	text-align: right;
+}
+.singlePostMeta {
+    text-align: right;
+}
+.singlePostMeta h1{
+	padding: 0;
+}
+/* ---------------------------------- for RTL ---------------------------------- */
+.mainMenu{
+	float: right;
+}
+.mainMenu li{
+	float: right;
+}
+.mainMenu li:first-child{ margin-left: 40px; }
+.mainMenu li:last-child{ margin-left: 0; }
+.footerSocialItem{
+	float: right;
+	text-align: right;
+}
+.footerSocialItem a, .footerSocialItem a:visited{
+	padding-right: 49px;
+	padding-left: 0;
+}
+.footerSocialItem a i{
+	right: 0;
+	left: auto;
+}
+.footerSocialItem p{
+	font-family: 'Josefin Sans', sans-serif;	
+}
+.blogPostBox .blogPostItem{
+	float: right;
+}
+.blogPostBox .blogPostItem:nth-child(3n+1){
+	margin-left: 30px;
+}
+.blogPostBox .blogPostItem:nth-child(3n+3){
+	margin-left: 0;
+}

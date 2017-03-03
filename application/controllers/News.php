@@ -59,6 +59,7 @@ class News extends CI_Controller {
         $posts = $this->News_model->get_news($id);
         if (count($posts) == 1) {
             $data['post'] = $posts[0];
+//            pr($data,1);
             $this->template->load('default', 'Home/detail', $data);
         } else {
             redirect('/');
