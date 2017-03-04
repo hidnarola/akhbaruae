@@ -201,6 +201,7 @@
     function open_modal(id){
         $('#hidden_post_id').val(id);
         $('#reply-form').modal();
+        $('.close-modal').html('');
     }
     function comment_form_validate(){
         var err_cnt = 0;
