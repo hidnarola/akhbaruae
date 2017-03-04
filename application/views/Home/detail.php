@@ -213,6 +213,8 @@
         $('#hidden_post_id').val(id);
         $('#reply-form').modal();
         $('.close-modal').html('');
+        grecaptcha.render('reply_widget', {'sitekey' : '6LeEnhcUAAAAAN37cyl-mqLwvuLqKrlc9u4Mho5P'});
+        
     }
     function comment_form_validate(){
         var err_cnt = 0;

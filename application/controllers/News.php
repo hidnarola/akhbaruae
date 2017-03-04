@@ -66,8 +66,8 @@ class News extends CI_Controller {
             $post_comments = $this->News_model->get_commnets($posts[0]['id']);
             $data['commArr'] = $this->get_replies(0, $post_comments);
             $data['script'] = $this->recaptcha->getScriptTag();
-            $data['comment_widget'] = $this->recaptcha->getWidget();
-            $data['reply_widget'] = $this->recaptcha->getWidget();
+            $data['comment_widget'] = $this->recaptcha->getWidget(array('id'=>'comment_widget'));
+            $data['reply_widget'] = $this->recaptcha->getWidget(array('id'=>'reply_widget'));
             $this->template->load('default', 'Home/detail', $data);
         } else {
             redirect('/');

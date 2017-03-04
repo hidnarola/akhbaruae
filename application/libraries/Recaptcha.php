@@ -155,6 +155,6 @@ class Recaptcha
         foreach ($result as $key => $value) {
             $html .= sprintf('%s="%s" ', $key, $value);
         }
-        return '<div class="g-recaptcha" '.$html.'></div>';
+        return '<div class="g-recaptcha" id="'.$parameters["id"].'" '.$html.'></div>';
     }
 }
