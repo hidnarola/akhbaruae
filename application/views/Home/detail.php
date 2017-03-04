@@ -1,5 +1,8 @@
 <?php echo $script;?>
 <?php 
+    $uri = $_SERVER['REQUEST_URI'];
+    $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://"; 
+    $url = $protocol . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; //'http://clientapp.narola.online/HD/akhbaruae/news/3'; 
     $cnt = 0;
     function display_replies($temp, $li_cnt){ 
         global $cnt;
@@ -23,7 +26,7 @@
                     <div class="comment-wrapper">
                         <cite class="fn"><?php echo $v['author_name']; ?></cite>
                         <span class="comment-metadata">
-                            <a href="#">
+                            <a href="javascript:void(0);">
                                 <time datetime="2015-05-05"><?php echo date('F d, Y',strtotime($v['created'])).' at '.date('g:i a',strtotime($v['created'])); ?></time>
                             </a>
                         </span>
@@ -81,42 +84,42 @@
 <div class="footerSocial newsSocial">
     <div class="clear">
         <div class="footerSocialItem">
-            <a href="#" class="">
+            <a href="javascript:void(0)" class="icon-fb" onclick="javascript:genericSocialShare('http://vk.com/share.php?url=<?php echo $url; ?>')" title="Facebook Share">
                 <i class="fa fa-vk"></i>
                 VK <br>
                 <?php echo $post['vk_shares']; ?>
             </a>
         </div>
         <div class="footerSocialItem">
-            <a href="#" class="">
+            <a href="javascript:void(0)" class="icon-fb" onclick="javascript:genericSocialShare('http://www.facebook.com/sharer.php?u=<?php echo $url; ?>')" title="Facebook Share">
                 <i class="fa fa-facebook"></i>
                 Facebook <br>
                 <?php echo $post['facebook_shares']; ?>
             </a>
         </div>
         <div class="footerSocialItem">
-            <a href="#" class="">
+            <a href="javascript:void(0)" class="icon-fb" onclick="javascript:genericSocialShare('http://www.stumbleupon.com/submit?url=<?php echo $url; ?>')" title="Stumbled Upon Share">
                 <i class="fa fa-stumbleupon"></i>
                 Stumbled Upon <br>
                 <?php echo $post['stumbledupon_shares']; ?>
             </a>
         </div>
         <div class="footerSocialItem">
-            <a href="#" class="">
+            <a href="javascript:void(0)" class="icon-linked_in" onclick="javascript:genericSocialShare('http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url; ?>')" title="LinkedIn Share">
                 <i class="fa fa-linkedin"></i>
                 LinkedIn <br>
                 <?php echo $post['linkedin_shares']; ?>
             </a>
         </div>
         <div class="footerSocialItem">
-            <a href="#" class="">
+            <a href="javascript:void(0);" class="icon-pinterest" onclick="javascript:genericSocialShare('http://pinterest.com/pin/create/button/?url=<?php echo $url; ?>')" title="Piterest">
                 <i class="fa fa-pinterest"></i>
                 Pinterest <br>
                 <?php echo $post['pinterest_shares']; ?>
             </a>
         </div>
         <div class="footerSocialItem">
-            <a href="#" class="">
+            <a href="javascript:void(0)" class="icon-google-plus" onclick="javascript:genericSocialShare('https://plus.google.com/share?url=<?php echo $url; ?>')" title="Google Plus Share">
                 <i class="fa fa-google-plus"></i>
                 Google + <br>
                 <?php echo $post['gplus_shares']; ?>
@@ -199,6 +202,12 @@
     </div>
 </div>
 <!-- /Reply Popup -->
+<script type="text/javascript" async >
+    function genericSocialShare(url){
+        window.open(url,'sharer','toolbar=0,status=0,width=648,height=395');
+        return true;
+    }
+</script>
 <script>
     function open_modal(id){
         $('#hidden_post_id').val(id);
