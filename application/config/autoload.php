@@ -103,7 +103,7 @@ $autoload['helper'] = array('url', 'file', 'form' ,'language', 'cookie', 'site',
 | config files.  Otherwise, leave it blank.
 |
 */
-$autoload['config'] = array();
+$autoload['config'] = array('recaptcha');
 
 /*
 | -------------------------------------------------------------------

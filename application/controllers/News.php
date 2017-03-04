@@ -8,6 +8,7 @@ class News extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+        $this->load->library('recaptcha');
         $this->load->model('News_model');
         $this->limit = 10;
     }
@@ -63,6 +64,8 @@ class News extends CI_Controller {
             $data['post'] = $posts[0];
             $post_comments = $this->News_model->get_commnets($posts[0]['id']);
             $data['commArr'] = $this->get_replies(0, $post_comments);
+            $data['script'] = $this->recaptcha->getScriptTag();
+            $data['widget'] = $this->recaptcha->getWidget();
             $this->template->load('default', 'Home/detail', $data);
         } else {
             redirect('/');
@@ -91,24 +94,32 @@ class News extends CI_Controller {
         $this->form_validation->set_error_delimiters('<span class="custom_error_msg_style">', '</span>');
         $this->form_validation->set_rules('txt_author_name', 'Name', 'trim|required');
         $this->form_validation->set_rules('txt_author_email', 'Email', 'trim|required|valid_email');
-        if ($this->form_validation->run() == FALSE){
+        $this->form_validation->set_rules('txt_author_comment', 'Comment', 'trim|required');
+        $recaptcha = $this->input->post('g-recaptcha-response');
+        if ($this->form_validation->run() == FALSE || empty($recaptcha)){
             $this->template->load('default', 'Home/detail', $data);
+            redirect('news/'.$id);
         }else{
-            if($this->input->post('hidden_post_id')!='')
-                $rootID = $this->input->post('hidden_post_id');
-            else
-                $rootID = 0;
-            $insertArr = array(
-                'news_id' => $id,
-                'author_name' => $this->input->post('txt_author_name'),
-                'author_email' => $this->input->post('txt_author_email'),
-                'author_website' => $this->input->post('txt_author_website'),
-                'author_comment' => $this->input->post('txt_author_comment'),
-                'rootID' => $rootID
-            );
-            common_insert_update('insert','comments',$insertArr);
+            $response = $this->recaptcha->verifyResponse($recaptcha);
+            if (isset($response['success']) && $response['success'] === true) {
+                if($this->input->post('hidden_post_id')!='')
+                    $rootID = $this->input->post('hidden_post_id');
+                else
+                    $rootID = 0;
+                $insertArr = array(
+                    'news_id' => $id,
+                    'author_name' => $this->input->post('txt_author_name'),
+                    'author_email' => $this->input->post('txt_author_email'),
+                    'author_website' => $this->input->post('txt_author_website'),
+                    'author_comment' => $this->input->post('txt_author_comment'),
+                    'rootID' => $rootID
+                );
+                common_insert_update('insert','comments',$insertArr);
+                redirect('news/'.$id);
+            } else {
+                redirect('news/');
+            }
         }
-        redirect('news/'.$id);
     }
 
 }
