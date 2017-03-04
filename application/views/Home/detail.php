@@ -1,3 +1,4 @@
+<?php echo $script;?>
 <?php 
     $uri = $_SERVER['REQUEST_URI'];
     $protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://"; 
@@ -154,10 +155,11 @@
             </p>
 
             <p class="comment-form-comment">
-                <label>Your comment</label>
+                <label>Your comment*</label>
                 <textarea id="txt_author_comment" placeholder="" aria-required="true" rows="8" cols="45" name="txt_author_comment"><?php echo set_value('txt_author_comment'); ?></textarea>
                 <?php echo form_error('txt_author_comment') ?>
             </p>
+            <?php echo $widget;?>
             <p class="form-submit clear">
                 <input id="submit" class="submit" type="submit" value="Post comment" name="submit">
             </p>
@@ -186,12 +188,12 @@
                 <input id="txt_author_website" type="text" placeholder="" size="30" value="<?php echo set_value('txt_author_website'); ?>" name="txt_author_website">
                 <?php echo form_error('txt_author_website') ?>
             </p>
-
             <p class="comment-form-comment">
-                <label>Your comment</label>
+                <label>Your comment*</label>
                 <textarea id="txt_author_comment" placeholder="" aria-required="true" rows="8" cols="45" name="txt_author_comment"><?php echo set_value('txt_author_comment'); ?></textarea>
                 <?php echo form_error('txt_author_comment') ?>
             </p>
+            <?php echo $widget;?>
             <p class="form-submit clear">
                 <input type="hidden" name="hidden_post_id" id="hidden_post_id" value="">
                 <input id="submit" class="submit" type="submit" value="Post Reply" name="submit">

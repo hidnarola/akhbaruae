@@ -74,6 +74,11 @@
 .singlePostMeta h1{
 	padding: 0;
 }
+.g-recaptcha{
+	float: left;
+	width: 100%;
+	margin-bottom: 30px;
+}
 /* ---------------------------------- for RTL ---------------------------------- */
 .mainMenu{
 	float: right;
@@ -128,6 +133,15 @@
 	direction: rtl;
 	text-align: right;
 }
+.comment-form-author, .comment-form-email, .comment-form-url{
+	float: right;
+}
+.comment-form-author{
+	margin-left: 30px;
+}
+.comment-form-url{
+	margin-left: 0;
+}
 .commentsBox.modal .comment-form-author,
 .commentsBox.modal .comment-form-email,
 .commentsBox.modal .comment-form-url {
@@ -136,28 +150,3 @@
 .jquery-modal.blocker.current{
 	z-index: 99999;
 }
-/*
-.comment-list.commentList,
-.comment-list.commentList li{
-	float: right;
-	width: 100%;
-}
-article.comment-body{
-	float: right;
-	display: block;
-}
-.comment-meta{
-	float: right;
-	display: block;
-	width: auto;
-}
-.reply{
-	left: 0;
-	right: auto;
-}
-.comment-wrapper{
-	float: right;
-    text-align: right;
-    margin-right: 26px;
-    display: block;
-}*/

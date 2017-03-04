@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="ar">
     <head>
         <title>AkhbarUAE - Home</title>
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
