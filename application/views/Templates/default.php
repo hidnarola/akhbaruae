@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar">
     <head>
-        <title>AkhbarUAE - Home</title>
+        <title>AkhbarUAE - <?php echo (isset($title) && $title != '') ? $title : 'Home'; ?></title>
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
         <base href="<?php echo base_url(); ?>">

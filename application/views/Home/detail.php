@@ -156,7 +156,7 @@
                 <textarea id="txt_author_comment" placeholder="" aria-required="true" rows="8" cols="45" name="txt_author_comment"><?php echo set_value('txt_author_comment'); ?></textarea>
                 <?php echo form_error('txt_author_comment') ?>
             </p>
-            <?php echo $widget;?>
+            <?php echo $comment_widget;?>
             <p class="form-submit clear">
                 <input id="submit" class="submit" type="submit" value="Post comment" name="submit">
             </p>
@@ -190,7 +190,7 @@
                 <textarea id="txt_author_comment" placeholder="" aria-required="true" rows="8" cols="45" name="txt_author_comment"><?php echo set_value('txt_author_comment'); ?></textarea>
                 <?php echo form_error('txt_author_comment') ?>
             </p>
-            <?php echo $widget;?>
+            <?php echo $reply_widget;?>
             <p class="form-submit clear">
                 <input type="hidden" name="hidden_post_id" id="hidden_post_id" value="">
                 <input id="submit" class="submit" type="submit" value="Post Reply" name="submit">
