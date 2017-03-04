@@ -84,45 +84,45 @@
 <div class="footerSocial newsSocial">
     <div class="clear">
         <div class="footerSocialItem">
-            <a href="javascript:void(0)" class="icon-fb" onclick="javascript:genericSocialShare('http://vk.com/share.php?url=<?php echo $url; ?>')" title="Facebook Share">
-                <i class="fa fa-vk"></i>
-                VK <br>
-                <?php echo $post['vk_shares']; ?>
-            </a>
-        </div>
-        <div class="footerSocialItem">
             <a href="javascript:void(0)" class="icon-fb" onclick="javascript:genericSocialShare('http://www.facebook.com/sharer.php?u=<?php echo $url; ?>')" title="Facebook Share">
                 <i class="fa fa-facebook"></i>
-                Facebook <br>
-                <?php echo $post['facebook_shares']; ?>
-            </a>
-        </div>
-        <div class="footerSocialItem">
-            <a href="javascript:void(0)" class="icon-fb" onclick="javascript:genericSocialShare('http://www.stumbleupon.com/submit?url=<?php echo $url; ?>')" title="Stumbled Upon Share">
-                <i class="fa fa-stumbleupon"></i>
-                Stumbled Upon <br>
-                <?php echo $post['stumbledupon_shares']; ?>
-            </a>
-        </div>
-        <div class="footerSocialItem">
-            <a href="javascript:void(0)" class="icon-linked_in" onclick="javascript:genericSocialShare('http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url; ?>')" title="LinkedIn Share">
-                <i class="fa fa-linkedin"></i>
-                LinkedIn <br>
-                <?php echo $post['linkedin_shares']; ?>
-            </a>
-        </div>
-        <div class="footerSocialItem">
-            <a href="javascript:void(0);" class="icon-pinterest" onclick="javascript:genericSocialShare('http://pinterest.com/pin/create/button/?url=<?php echo $url; ?>')" title="Piterest">
-                <i class="fa fa-pinterest"></i>
-                Pinterest <br>
-                <?php echo $post['pinterest_shares']; ?>
+                <p>Facebook</p>
+                <!--<p><?php echo $post['facebook_shares']; ?></p>-->
             </a>
         </div>
         <div class="footerSocialItem">
             <a href="javascript:void(0)" class="icon-google-plus" onclick="javascript:genericSocialShare('https://plus.google.com/share?url=<?php echo $url; ?>')" title="Google Plus Share">
                 <i class="fa fa-google-plus"></i>
-                Google + <br>
-                <?php echo $post['gplus_shares']; ?>
+                <p>Google +</p>
+                <!--<p><?php echo $post['gplus_shares']; ?></p>-->
+            </a>
+        </div>
+        <div class="footerSocialItem">
+            <a href="javascript:void(0)" class="icon-linked_in" onclick="javascript:genericSocialShare('http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url; ?>')" title="LinkedIn Share">
+                <i class="fa fa-linkedin"></i>
+                <p>LinkedIn</p>
+                <!--<p><?php echo $post['linkedin_shares']; ?></p>-->
+            </a>
+        </div>
+        <div class="footerSocialItem">
+            <a href="javascript:void(0);" class="icon-pinterest" onclick="javascript:genericSocialShare('http://pinterest.com/pin/create/button/?url=<?php echo $url; ?>')" title="Piterest">
+                <i class="fa fa-pinterest"></i>
+                <p>Pinterest</p>
+                <!--<p><?php echo $post['pinterest_shares']; ?></p>-->
+            </a>
+        </div>
+        <div class="footerSocialItem">
+            <a href="javascript:void(0)" class="icon-fb" onclick="javascript:genericSocialShare('http://vk.com/share.php?url=<?php echo $url; ?>')" title="Facebook Share">
+                <i class="fa fa-vk"></i>
+                <p>VK</p>
+                <!--<p><?php echo $post['vk_shares']; ?></p>-->
+            </a>
+        </div>
+        <div class="footerSocialItem">
+            <a href="javascript:void(0)" class="icon-fb" onclick="javascript:genericSocialShare('http://www.stumbleupon.com/submit?url=<?php echo $url; ?>')" title="Stumbled Upon Share">
+                <i class="fa fa-stumbleupon"></i>
+                <p>Stumbled Upon</p>
+                <!--<p><?php echo $post['stumbledupon_shares']; ?></p>-->
             </a>
         </div>
     </div>

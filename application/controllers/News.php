@@ -116,7 +116,7 @@ class News extends CI_Controller {
                     'author_comment' => $this->input->post('txt_author_comment'),
                     'rootID' => $rootID
                 );
-                common_insert_update('insert','comments',$insertArr);
+                $this->News_model->add_comments($insertArr);
                 redirect('news/'.$id);
             } else {
                 redirect('news/');

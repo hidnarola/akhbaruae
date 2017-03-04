@@ -22,39 +22,8 @@
                         <img src="assets/images/mobile-logo.png" alt="Francoise img">
                     </a>
                     <ul class="mainMenu clear">
-                        <li>
-                            <a href="">Home</a>
-                            <ul>
-                                <li><a href="index-slider.html">Home slider</a></li>
-                                <li><a href="index-fullsize.html">Home fullsize</a></li>
-                                <li><a href="index-masonry.html">Home masonry</a></li>
-                                <li class="current-menu-item"><a href="index-grid.html">Home grid</a></li>
-                                <li><a href="index-list.html">Home list </a></li>
-                                <li><a href="404.html">404 page</a></li>
-                                <li><a href="single-post.html">Single post</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="">Home</a></li>
                         <li><a href="news">News</a></li>
-<!--                        <li><a href="category.html">lifestyle</a></li>
-                        <li>
-                            <a href="category.html">travel</a>
-                            <ul>
-                                <li><a href="#">Submenu one</a></li>
-                                <li><a href="#">Submenu two</a></li>
-                                <li><a href="#">Submenu three</a></li>
-                                <li class="menu-item-has-children">
-                                    <a href="#">Submenu four</a>
-                                    <ul>
-                                        <li><a href="#">Submenu one</a></li>
-                                        <li><a href="#">Submenu two</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="category.html">fashion</a></li>
-                        <li><a href="category.html">inspiration</a></li>
-                        <li><a href="about.html">about</a></li>
-                        <li><a href="contact.html">contact</a></li>-->
                     </ul>
 <!--                    <div class="pull-right clear">
                         <div class="headerSocialLinks clear">
@@ -149,38 +118,8 @@
                 </form>
             </div>
             <ul>
-                <li>
-                    <a href="index.html">home</a>
-                    <ul>
-                        <li><a href="index-slider.html">Home slider</a></li>
-                        <li><a href="index-fullsize.html">Home fullsize</a></li>
-                        <li><a href="index-masonry.html">Home masonry</a></li>
-                        <li class="current-menu-item"><a href="index-grid.html">Home grid</a></li>
-                        <li><a href="index-list.html">Home list </a></li>
-                        <li><a href="404.html">404 page</a></li>
-                        <li><a href="single-post.html">Single post</a></li>
-                    </ul>
-                </li>
-                <li><a href="category.html">lifestyle</a></li>
-                <li>
-                    <a href="category.html">travel</a>
-                    <ul>
-                        <li><a href="#">Submenu one</a></li>
-                        <li><a href="#">Submenu two</a></li>
-                        <li><a href="#">Submenu three</a></li>
-                        <li class="menu-item-has-children">
-                            <a href="#">Submenu four</a>
-                            <ul>
-                                <li><a href="#">Submenu one</a></li>
-                                <li><a href="#">Submenu two</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li><a href="category.html">fashion</a></li>
-                <li><a href="category.html">inspiration</a></li>
-                <li><a href="about.html">about</a></li>
-                <li><a href="contact.html">contact</a></li>
+                <li><a href="">Home</a></li>
+                <li><a href="news">News</a></li>
             </ul>
             <div class="mobileSocial clear">
                 <a href="#"><i class="fa fa-instagram"></i></a>

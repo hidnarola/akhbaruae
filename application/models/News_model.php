@@ -21,8 +21,7 @@ class News_model extends CI_Model {
         if ($id != '') {
             $this->db->where('news.id', $id);
         }
-        //$this->db->join('social', 'social.news_id = news.id', 'LEFT');
-        $this->db->join('news_share', 'news_share.news_id = news.id', 'LEFT');
+        $this->db->join('social', 'social.news_id = news.id', 'LEFT');
         $this->db->limit(10, 0);
         $news = $this->db->get('news');
         return $news->result_array();
@@ -73,6 +72,14 @@ class News_model extends CI_Model {
         $this->db->where('news_id', $news_id);
         $comments = $this->db->get('comments');
         return $comments->result_array();
+    }
+    
+    public function add_comments($insertArr) {
+        if($this->db->insert('comments', $insertArr)){
+            return 1;
+        }else{
+            return 0;
+        }
     }
     
     public function get_result($table, $condition = null) {
