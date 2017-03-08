@@ -23,12 +23,12 @@
     <ul class="clear">
         <?php if($page != $last_page) { ?>
         <li class="newPosts <?php echo ($page != $last_page) ? 'my_pagination' : ''; ?>">
-            <a href="javascript:void(0)" data-page="<?php echo ($page + 1); ?>">New posts</a>
+            <a href="javascript:void(0)" data-page="<?php echo ($page + 1); ?>"><?php echo lang('new_posts'); ?></a>
         </li>
         <?php } ?>
         <?php if($page > 1) { ?>
         <li class="olderPosts <?php echo ($page > 1) ? 'my_pagination' : 'disable_pagination'; ?>">
-            <a href="javascript:void(0)" data-page="<?php echo ($page - 1); ?>">Older posts</a>
+            <a href="javascript:void(0)" data-page="<?php echo ($page - 1); ?>"><?php echo lang('old_posts'); ?></a>
         </li>
         <?php } ?>
     </ul>

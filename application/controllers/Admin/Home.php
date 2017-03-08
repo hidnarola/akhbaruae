@@ -8,12 +8,13 @@ class Home extends CI_Controller {
         parent::__construct();
         get_admin_data();
         $this->load->model('admin/admin_home_model');
+        $this->load->model('News_model');
     }
 
     public function index() {
         $data['title'] = 'Dashboard';
-        $data['total_users'] = $this->admin_home_model->rows_of_table('user','is_delete = 0');
-        $data['total_blocked_users'] = $this->admin_home_model->rows_of_table('user','is_delete = 2');
+        $data['total_active_news'] = count($this->News_model->check_news_exist('active', 1));
+        $data['total_blocked_news'] = count($this->News_model->check_news_exist('active', 0));
         $this->template->load('admin', 'admin/home/index', $data);
     }
 

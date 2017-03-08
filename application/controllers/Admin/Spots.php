@@ -15,7 +15,7 @@ class Spots extends CI_Controller {
      * @author : KAP
      **/
     public function active() {
-        $data['title'] = 'Spotashoot - Admin active spots';
+        $data['title'] = 'AkhbarUAE - Admin active spots';
         $this->template->load('admin','admin/spots/index', $data);
     }
 
@@ -42,7 +42,7 @@ class Spots extends CI_Controller {
      * @author : KAP
      **/
     public function new_requests() {
-        $data['title'] = 'Spotashoot - Admin new request spots';
+        $data['title'] = 'AkhbarUAE - Admin new request spots';
         $this->template->load('admin','admin/spots/new_request', $data);
     }
 

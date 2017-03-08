@@ -1,0 +1,12 @@
+.navbar-header{
+	background: #f5f5f5;
+}
+.login-form .icon-object{
+	border: none;
+}
+.login-form .icon-object img{
+	width: 100%;
+}
+.navbar-header .nav.navbar-nav.visible-xs-block{
+	background: #37474F;
+}

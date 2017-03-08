@@ -12,24 +12,24 @@ class Cron extends CI_Controller {
     }
 
     public function index() {
+        $last_crawled_date = $this->News_model->get_last_crawled_date();
+        $last_crawled_date = strtotime($last_crawled_date['last_crawled']);
         $params = array(
+            "q"=>"language:(arabic) thread.country:AE",
             "size" => "100",
-            "sort" => "relevancy",
-            "language" => "arabic",
-            "thread.country" => "AE"
         );
+        if($last_crawled_date != ''){
+            $params['ts'] = $last_crawled_date * 1000;
+        } else {
+            $params['ts'] = strtotime(date('Y-m-d H:i:s') .' -1 day') * 1000;
+        }
         $result = Webhose::query("filterWebData", $params);
         $this->manage_news($result);
-        
-    }
-    
-    public function test() {
-        $this->template->load('default', 'Home/test');
     }
     
     public function manage_news($api_response) {
         if ($api_response == null) {
-            echo "<p>Response is null, no action taken.</p>";
+            die("<p>Response is null, no action taken.</p>");
             return;
         }
         if (isset($api_response->posts)){
@@ -45,8 +45,10 @@ class Cron extends CI_Controller {
                     'site_address' => $post->thread->site_full,
                     'site_categories' => implode('|', $post->thread->site_categories),
                     'external_links' => implode('|', $post->external_links),
-                    'published' => date('Y-m-d H:i:s', strtotime($post->published)),
-                    'crawled' => date('Y-m-d H:i:s', strtotime($post->crawled))
+                    'published' => $post->published,
+                    'crawled' => $post->crawled
+                    /*'published' => date('Y-m-d H:i:s', strtotime($post->published)),
+                    'crawled' => date('Y-m-d H:i:s', strtotime($post->crawled))*/
                 );
                 $social_obj = array(
                     'facebook_likes' => $post->thread->social->facebook->likes,
@@ -66,8 +68,12 @@ class Cron extends CI_Controller {
                 }
             }
         }
-        $result = Webhose::get_next();
-        $this->manage_news($result);
+        if($api_response->moreResultsAvailable > 0){
+            $result = Webhose::get_next();
+            $this->manage_news($result);
+        } else {
+            return 1;
+        }
     }
 
 }

@@ -15,144 +15,47 @@
 <div class="content">
     <div class="row">
         <div class="col-md-4">
-            <div class="panel panel-body border-top-danger text-center">
-                <h6 class="no-margin text-semibold">Total active users</h6>
+            <div class="panel panel-body text-center">
+                <h6 class="no-margin text-semibold">Total active news</h6>
                 <p class="content-group-sm text-muted"></p>
                 <ul class="fab-menu fab-menu-top" data-fab-toggle="click">
                     <li>
                         <a class="fab-menu-btn btn bg-teal-400 btn-float btn-rounded btn-icon count">
-                            <?php echo $total_users; ?>
+                            <?php echo $total_active_news; ?>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="panel panel-body border-top-danger text-center">
-                <h6 class="no-margin text-semibold">Total blocked users</h6>
+            <div class="panel panel-body text-center">
+                <h6 class="no-margin text-semibold">Total blocked news</h6>
                 <p class="content-group-sm text-muted"></p>
 
                 <ul class="fab-menu fab-menu-top" data-fab-toggle="click">
                     <li>
                         <a class="fab-menu-btn btn btn-danger btn-float btn-rounded btn-icon count">
-                            <?php echo $total_blocked_users; ?>
+                            <?php echo $total_blocked_news; ?>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="panel panel-body border-top-danger text-center">
-                <h6 class="no-margin text-semibold">Total users</h6>
+            <div class="panel panel-body text-center">
+                <h6 class="no-margin text-semibold">Total news</h6>
                 <p class="content-group-sm text-muted"></p>
                 <ul class="fab-menu fab-menu-top" data-fab-toggle="click">
                     <li>
-                        <a class="fab-menu-btn btn bg-brown btn-float btn-rounded btn-icon count">
-                            <?php echo $total_users + $total_blocked_users; ?>
+                        <a class="fab-menu-btn btn bg-brown btn-float btn-rounded btn-icon count FontBig">
+                            <?php echo $total_active_news + $total_blocked_news; ?>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="row">
-        <!-- Sales stats -->
-        <div class="panel panel-flat">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <h2 class="panel-title">Users Report</h2>
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="form-inline pull-right">
-                            <div class="form-group">
-                                <input name="datepicker" class="form-control" id="search_users_text" class="date-picker" />
-                            </div>
-                            <button type="submit" class="btn btn-primary" id="search_users" data-type="search_users">Search</button>
-                        </div>
-                    </div>    
-                </div>
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div  id="chartContainer1" style="width: 100%; height: 500px; margin-bottom: 10px"></div> 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /sales stats -->
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            <div class="panel panel-body border-top-danger text-center">
-                <h6 class="no-margin text-semibold">Total active spots</h6>
-                <p class="content-group-sm text-muted"></p>
-                <ul class="fab-menu fab-menu-top" data-fab-toggle="click">
-                    <li>
-                        <a class="fab-menu-btn btn bg-teal-400 btn-float btn-rounded btn-icon count">
-                            <?php echo $total_spots; ?>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="panel panel-body border-top-danger text-center">
-                <h6 class="no-margin text-semibold">Total pending approval spots</h6>
-                <p class="content-group-sm text-muted"></p>
-
-                <ul class="fab-menu fab-menu-top" data-fab-toggle="click">
-                    <li>
-                        <a class="fab-menu-btn btn btn-danger btn-float btn-rounded btn-icon count">
-                            <?php echo $total_pending_spots; ?>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="panel panel-body border-top-danger text-center">
-                <h6 class="no-margin text-semibold">Total spots</h6>
-                <p class="content-group-sm text-muted"></p>
-                <ul class="fab-menu fab-menu-top" data-fab-toggle="click">
-                    <li>
-                        <a class="fab-menu-btn btn bg-brown btn-float btn-rounded btn-icon count">
-                            <?php echo $total_spots + $total_pending_spots; ?>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <!-- Sales stats -->
-        <div class="panel panel-flat">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <h2 class="panel-title">Spots Report</h2>
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="form-inline pull-right">
-                            <div class="form-group">
-                                <input name="datepicker" class="form-control" id="search_spots_text" class="date-picker" />
-                            </div>
-                            <button type="submit" class="btn btn-primary" id="search_spots" data-type="search_spots">Search</button>
-                        </div>
-                    </div>    
-                </div>
-            </div>
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div  id="chartContainer2" style="width: 100%; height: 500px; margin-bottom: 10px;"></div> 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /sales stats -->
-    </div>
+    
 </div>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script>

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link href="assets/images/spotfav.png" rel='shortcut icon' type='image/x-icon'/>
+        <link href="favicon.ico" rel='shortcut icon' type='image/x-icon'/>
         <?php 
             $this->load->view('Templates/admin_common_head');
         ?>
-        <link href="assets/fonts/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="assets/admin/css/icons/fontawesome/styles.min.css" rel="stylesheet" type="text/css">
         <!-- Core JS files -->
         <script type="text/javascript" src="assets/admin/js/plugins/loaders/pace.min.js"></script>
         <!-- <script type="text/javascript" src="assets/admin/js/jquery.validate.js"></script> -->
@@ -19,7 +19,7 @@
     <!-- Main navbar -->
     <div class="navbar navbar-inverse">
         <div class="navbar-header">
-            <a class="navbar-brand" href="<?php echo site_url('admin'); ?>"><img width="209" src="assets/images/spotashoot.com.png" alt=""></a>
+            <a class="navbar-brand" href="<?php echo site_url('admin'); ?>"><img width="209" src="assets/images/logo.png" alt=""></a>
             <ul class="nav navbar-nav visible-xs-block">
                 <li><a data-toggle="collapse" data-target="#navbar-mobile"><i class="icon-tree5"></i></a></li>
                 <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
@@ -32,7 +32,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown dropdown-user">
                     <a class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="assets/admin/images/placeholder.jpg" alt="">
+                        <img src="assets/images/uae.png" alt="">
                         <span><?php echo $this->session->userdata('admin')['first_name'].' '.$this->session->userdata('admin')['last_name'] ?></span>
                         <i class="caret"></i>
                     </a>
@@ -56,7 +56,7 @@
                     <div class="sidebar-user">
                         <div class="category-content">
                             <div class="media">
-                                <a href="#" class="media-left"><img src="assets/admin/images/placeholder.jpg" class="img-circle img-sm" alt=""></a>
+                                <a href="#" class="media-left"><img src="assets/images/uae.png" class="img-circle img-sm" alt=""></a>
                                 <div class="media-body">
                                     <span class="media-heading text-semibold"><?php echo $this->session->userdata('admin')['first_name'].' '.$this->session->userdata('admin')['last_name'] ?></span>
                                     <div class="text-size-mini text-muted">
@@ -75,9 +75,12 @@
                                     $controller = $this->router->fetch_class(); 
                                     $action = $this->router->fetch_method(); 
                                 ?>
-                                <li class="navigation-header"><span></span> <i class="icon-menu" title="Main pages"></i></li>
+                                <li class="navigation-header"><span>Menu</span><i class="icon-menu" title="Menu"></i> </li>
                                 <li class="<?php echo ($controller == 'home') ? 'active' : ''; ?>">
                                     <a href="<?php echo site_url('admin/home');?>"><i class="icon-home4"></i> <span>Dashboard</span></a>
+                                </li>
+                                <li class="<?php echo ($controller == 'news') ? 'active' : ''; ?>">
+                                    <a href="<?php echo site_url('admin/news');?>"><i class="icon-newspaper2"></i> <span>News</span></a>
                                 </li>
                                 <li class="<?php echo ($controller == 'pages') ? 'active' : ''; ?>">
                                     <a href="<?php echo site_url('admin/pages');?>"><i class=" icon-magazine"></i> <span>Manage Pages</span></a>

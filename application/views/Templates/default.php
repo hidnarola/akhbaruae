@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar">
     <head>
-        <title>AkhbarUAE - <?php echo (isset($title) && $title != '') ? $title : 'Home'; ?></title>
+        <title>AkhbarUAE - <?php echo (isset($title) && $title != '') ? $title : lang('home'); ?></title>
         <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
         <base href="<?php echo base_url(); ?>">
@@ -11,6 +11,8 @@
         <link rel="stylesheet" type="text/css" href="assets/css/adaptive.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="assets/css/custom.css" media="screen" />
         <link rel="stylesheet" type="text/css" href="assets/css/jquery.modal.css" media="screen" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
         <script type="text/javascript" src="assets/js/jquery-1.11.3.min.js"></script>
     </head>
     <!--<body class="page-grid">-->
@@ -20,10 +22,10 @@
                 <div class="wrapper clear">
                     <a href="index.html" class="mobile-logo">
                         <img src="assets/images/mobile-logo.png" alt="Francoise img">
+                        <!--<img src="assets/images/weblogo.png" alt="Francoise img">-->
                     </a>
                     <ul class="mainMenu clear">
-                        <li><a href="">Home</a></li>
-                        <li><a href="news">News</a></li>
+                        <li><a href=""><?php echo lang('home'); ?></a></li>
                     </ul>
 <!--                    <div class="pull-right clear">
                         <div class="headerSocialLinks clear">
@@ -45,6 +47,7 @@
                 </div>	
             </div>
             <a href="#" class="logo"><img src="assets/images/logo.png" alt="Francoise img"></a>
+            <!--<a href="#" class="logo"><img src="assets/images/weblogo.png" alt="Francoise img"></a>-->
         </header>
         <section class="container">
             <div class="wrapper clear">
@@ -99,15 +102,15 @@
                 </div>
             </div>-->
             <div class="wrapper">
-                <ul class="footerMenu">
+<!--                <ul class="footerMenu">
                     <li><a href="category.html">Lyfestyle</a></li>
                     <li><a href="category.html">travel</a></li>
                     <li><a href="category.html">fashion</a></li>
                     <li><a href="category.html">Inspiration</a></li>
                     <li><a href="about.html">about</a></li>
                     <li><a href="contact.html">contact</a></li>
-                </ul>
-                <p class="copyright">© 2015 Francoise</p>
+                </ul>-->
+                <p class="copyright"><?php echo lang('footer_text'); ?></p>
             </div>	
         </footer>
         <div class="mobileMenu">
@@ -118,8 +121,8 @@
                 </form>
             </div>
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="news">News</a></li>
+                <li><a href=""><?php echo lang('home'); ?></a></li>
+                <!--<li><a href="news"><?php echo lang('news'); ?></a></li>-->
             </ul>
             <div class="mobileSocial clear">
                 <a href="#"><i class="fa fa-instagram"></i></a>

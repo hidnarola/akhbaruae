@@ -15,7 +15,7 @@ class Users extends CI_Controller {
      * @author : KAP
      **/
     public function index() {
-        $data['title'] = 'Spotashoot - Admin users';
+        $data['title'] = 'AkhbarUAE - Admin users';
         $this->template->load('admin','admin/users/index', $data);
     }
 
@@ -82,14 +82,14 @@ class Users extends CI_Controller {
                 $data['user_data'] = $check_user[0];
                 $data['states'] = $this->admin_users_model->get_result(TBL_STATES);
                 $data['cities'] = $this->admin_users_model->get_result(TBL_CITIES);
-                $data['title'] = 'Spotashoot - Admin edit user';
+                $data['title'] = 'AkhbarUAE - Admin edit user';
                 $data['heading'] = 'Edit user';
             } else {
                 show_404();
             }
         } else {
             $data['heading'] = 'Add user';
-            $data['title'] = 'Spotashoot - Admin Add user';
+            $data['title'] = 'AkhbarUAE - Admin Add user';
             $this->form_validation->set_rules('password', 'password', 'trim|required|min_length[5]|matches[confirm_password]');
             $this->form_validation->set_rules('confirm_password', 'confirm password', 'trim|required');
             $this->form_validation->set_rules('email_id', 'email id', 'trim|required|valid_email|is_unique['.TBL_USER.'.email_id]');
@@ -227,7 +227,7 @@ class Users extends CI_Controller {
         $where = 'id = '.$this->db->escape($user_id);
         $check_user = $this->admin_users_model->get_result(TBL_USER,$where);
         if($check_user){
-            $data['title'] = 'Spotashoot - Admin active spots';
+            $data['title'] = 'AkhbarUAE - Admin active spots';
             $data['user_data'] = $check_user[0];
             $this->template->load('admin','admin/users/spots', $data);
         } else {
@@ -289,7 +289,7 @@ class Users extends CI_Controller {
         $check_user = $this->admin_users_model->get_result(TBL_USER,$where);
         if($check_user) {
             $data['heading'] = 'Add user';
-            $data['title'] = 'Spotashoot - Admin Add user';
+            $data['title'] = 'AkhbarUAE - Admin Add user';
             $data['userdata'] = $check_user[0];
 
             $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[5]|max_length[15]|matches[confirm_password]', 

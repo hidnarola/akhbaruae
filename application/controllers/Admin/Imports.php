@@ -15,7 +15,7 @@ class Imports extends CI_Controller {
      * @author KAP
      **/
     public function spots() {
-        $data['title'] = 'Spotashoot - Admin users';
+        $data['title'] = 'AkhbarUAE - Admin users';
         $data['heading'] = 'Import Spots';
         $this->template->load('admin','admin/imports/manage', $data);
     }

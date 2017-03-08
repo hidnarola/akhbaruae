@@ -16,6 +16,7 @@ class News extends CI_Controller {
     public function index() {
         $filter_array = array();
         $posts['page'] = 1;
+        $posts['title'] = lang('news');
         $posts['limit'] = $this->limit;
         $posts['total_news'] = $this->News_model->filter_news($filter_array, 1);
         $posts['posts'] = $this->News_model->filter_news($filter_array, 0, 0, $this->limit);
@@ -68,7 +69,7 @@ class News extends CI_Controller {
             $data['script'] = $this->recaptcha->getScriptTag();
             $data['comment_widget'] = $this->recaptcha->getWidget(array('id'=>'comment_widget'));
             $data['reply_widget'] = $this->recaptcha->getWidget(array('id'=>'reply_widget'));
-            $this->template->load('default', 'Home/detail', $data);
+            $this->template->load('default', 'News/detail', $data);
         } else {
             redirect('/');
         }
@@ -112,7 +113,6 @@ class News extends CI_Controller {
                     'news_id' => $id,
                     'author_name' => $this->input->post('txt_author_name'),
                     'author_email' => $this->input->post('txt_author_email'),
-                    'author_website' => $this->input->post('txt_author_website'),
                     'author_comment' => $this->input->post('txt_author_comment'),
                     'rootID' => $rootID
                 );
@@ -122,6 +122,22 @@ class News extends CI_Controller {
                 redirect('news/');
             }
         }
+    }
+    
+    public function feeds(){
+        die('here');
+        $this->load->helper('xml');
+        $this->load->helper('text');
+        $data['feed_name'] = 'AkhbarUAE'; // your website
+        $data['encoding'] = 'utf-8'; // the encoding
+        $data['feed_url'] = 'http://clientapp.narola.online/HD/akhbaruae/feed'; // the url to your feed
+        $data['page_description'] = 'List of latest News'; // some description
+        $data['page_language'] = 'en-us'; // the language
+        $data['creator_email'] = 'psh@narola.email'; // your email
+        $data['posts'] = $this->News_model->get_all_news(10);  
+        pr($data,1);
+        header("Content-Type: application/rss+xml"); // important!
+        $this->load->view('News/rss', $data);
     }
 
 }

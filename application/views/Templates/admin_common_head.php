@@ -11,6 +11,7 @@
 <link href="assets/admin/css/core.css" rel="stylesheet" type="text/css">
 <link href="assets/admin/css/components.css" rel="stylesheet" type="text/css">
 <link href="assets/admin/css/colors.css" rel="stylesheet" type="text/css">
+<link href="assets/admin/css/custom.css" rel="stylesheet" type="text/css">
 <!-- /global stylesheets -->
 
 <!-- Core JS files -->

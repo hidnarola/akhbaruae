@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="favicon.ico" rel='shortcut icon' type='image/x-icon'/>
     <title>AkhbarUAE - Admin login</title>
     <!-- Global stylesheets -->
     <title><?php echo $title; ?></title>
@@ -14,6 +15,7 @@
     <link href="assets/admin/css/core.css" rel="stylesheet" type="text/css">
     <link href="assets/admin/css/components.css" rel="stylesheet" type="text/css">
     <link href="assets/admin/css/colors.css" rel="stylesheet" type="text/css">
+    <link href="assets/admin/css/custom.css" rel="stylesheet" type="text/css">
     <!-- /global stylesheets -->
     <!-- Core JS files -->
     <script type="text/javascript" src="assets/admin/js/plugins/loaders/pace.min.js"></script>
@@ -42,7 +44,7 @@
                     <form action="" class="form-validate" method="POST">
                         <div class="panel panel-body login-form">
                             <div class="text-center">
-                                <div class="icon-object border-slate-300 text-slate-300"><img src="assets/images/spotashoot.png" alt=""></div>
+                                <div class="icon-object border-slate-300 text-slate-300"><img src="assets/images/logo.png" alt=""></div>
                                 <h5 class="content-group">Welcome to AkhbarUAE <small class="display-block">Login to your account</small></h5>
                             </div>
                             <?php

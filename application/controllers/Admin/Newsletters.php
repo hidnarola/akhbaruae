@@ -15,7 +15,7 @@ class Newsletters extends CI_Controller {
      * @author : KAP
      **/
     public function index() {
-        $data['title'] = 'Spotashoot - Admin newsletters';
+        $data['title'] = 'AkhbarUAE - Admin newsletters';
         $this->template->load('admin','admin/newsletters/index', $data);
     }
 
@@ -70,14 +70,14 @@ class Newsletters extends CI_Controller {
             $check_newsletter = $this->admin_newsletters_model->get_result(TBL_NEWSLETTERS,$where);
             if($check_newsletter){
                 $data['newsletter_data'] = $check_newsletter[0];
-                $data['title'] = 'Spotashoot - Admin edit newsletter';
+                $data['title'] = 'AkhbarUAE - Admin edit newsletter';
                 $data['heading'] = 'Edit newsletter';
             } else {
                 show_404();
             }
         } else {
             $data['heading'] = 'Add newsletter';
-            $data['title'] = 'Spotashoot - Admin add newsletter';
+            $data['title'] = 'AkhbarUAE - Admin add newsletter';
         }
         $this->form_validation->set_rules('title', 'title', 'trim|required|callback_checktitle');
         if ($this->form_validation->run() == FALSE) {
@@ -148,7 +148,7 @@ class Newsletters extends CI_Controller {
         if($check_newsletter){
             $data['heading'] = 'Newsletter settings';
 
-            $data['title'] = 'Spotashoot - Admin newsletter Settings';
+            $data['title'] = 'AkhbarUAE - Admin newsletter Settings';
             $data['newsletter_id'] = $newsletter_id;
             $check_newsletter_setting = $this->admin_newsletters_model->get_result(TBL_NEWSLETTER_SETTINGS,'newsletter_id ='.$newsletter_id);
             if($check_newsletter_setting){
@@ -255,7 +255,7 @@ class Newsletters extends CI_Controller {
             // );
         }
         $from = 'info@spotashoot.com';
-        $subject = 'Spotashoot - Newsletter';
+        $subject = 'AkhbarUAE - Newsletter';
         $body = $newsletter_data[0]['content'];
         @send_newsletter($users, $from, $subject, $body);
         echo 'success';

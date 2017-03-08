@@ -16,7 +16,7 @@ class Pages extends CI_Controller {
      * @author : KAP
      **/
     public function index() {
-        $data['title'] = 'Spotashoot - Admin pages';
+        $data['title'] = 'AkhbarUAE - Admin pages';
         $this->template->load('admin','admin/pages/index', $data);
     }
 
@@ -42,7 +42,7 @@ class Pages extends CI_Controller {
      **/
     public function edit($id = '') {
         if($id != ''){
-            $data['title'] = 'Spotashoot - Admin edit page';
+            $data['title'] = 'AkhbarUAE - Admin edit page';
             $data['heading'] = 'Edit page';
             $result = $this->admin_pages_model->get_result('pages',' id = '.$id);
             if(isset($result)){
@@ -51,7 +51,7 @@ class Pages extends CI_Controller {
                 show_404();
             }
         } else {
-            $data['title'] = 'Spotashoot - Admin add page';
+            $data['title'] = 'AkhbarUAE - Admin add page';
             $data['heading'] = 'Add page';
         }
         $data['pages'] = $this->admin_pages_model->get_result('pages','parent_id = 0');

@@ -15,7 +15,7 @@ class Header_footer_control extends CI_Controller {
      * @author : KAP
      **/
     public function index() {
-        $data['title'] = 'Spotashoot - Admin control';
+        $data['title'] = 'AkhbarUAE - Admin control';
         $this->template->load('admin','admin/control/index', $data);
     }
 

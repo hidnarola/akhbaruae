@@ -15,7 +15,7 @@ class Categories extends CI_Controller {
      * @author : KAP
      **/
     public function index() {
-        $data['title'] = 'Spotashoot - Admin Categories';
+        $data['title'] = 'AkhbarUAE - Admin Categories';
         $this->template->load('admin','admin/categories/index', $data);
     }
 
@@ -74,7 +74,7 @@ class Categories extends CI_Controller {
             $category_data = $this->admin_categories_model->get_result(TBL_CATEGORIES,$where);
             if($category_data){
                 $data['category_data'] = $category_data[0];
-                $data['title'] = 'Spotashoot - Admin edit category';
+                $data['title'] = 'AkhbarUAE - Admin edit category';
                 $data['heading'] = 'Edit category';
                 if(trim($this->input->post('name')) != $category_data[0]['name']){
                     $this->form_validation->set_rules('name', 'name', 'trim|required|is_unique['.TBL_CATEGORIES.'.name]',array('is_unique' => 'Category already exist! Please try with another.'));
@@ -86,7 +86,7 @@ class Categories extends CI_Controller {
             }
         } else {
             $data['heading'] = 'Add category';
-            $data['title'] = 'Spotashoot - Admin add category';
+            $data['title'] = 'AkhbarUAE - Admin add category';
             $this->form_validation->set_rules('name', 'name', 'trim|required|is_unique['.TBL_CATEGORIES.'.name]',array('is_unique' => 'Category already exist! Please try with another.'));
         }
         if ($this->form_validation->run() == FALSE) {

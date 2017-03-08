@@ -15,7 +15,7 @@ class Amenities extends CI_Controller {
      * @author : KAP
      **/
     public function index() {
-        $data['title'] = 'Spotashoot - Admin Spot Features';
+        $data['title'] = 'AkhbarUAE - Admin Spot Features';
         $this->template->load('admin','admin/amenities/index', $data);
     }
 
@@ -74,7 +74,7 @@ class Amenities extends CI_Controller {
             $amenitie_data = $this->admin_amenities_model->get_result(TBL_AMENITIES,$where);
             if($amenitie_data){
                 $data['amenitie_data'] = $amenitie_data[0];
-                $data['title'] = 'Spotashoot - Admin edit spot feature';
+                $data['title'] = 'AkhbarUAE - Admin edit spot feature';
                 $data['heading'] = 'Edit spot feature';
                 if(trim($this->input->post('name')) != $amenitie_data[0]['name']){
                     $this->form_validation->set_rules('name', 'name', 'trim|required|is_unique['.TBL_AMENITIES.'.name]',array('is_unique' => 'Amenitie already exist! Please try with another.'));
@@ -86,7 +86,7 @@ class Amenities extends CI_Controller {
             }
         } else {
             $data['heading'] = 'Add spot feature';
-            $data['title'] = 'Spotashoot - Admin add spot feature';
+            $data['title'] = 'AkhbarUAE - Admin add spot feature';
             $this->form_validation->set_rules('name', 'name', 'trim|required|is_unique['.TBL_AMENITIES.'.name]',array('is_unique' => 'spot feature already exist! Please try with another.'));
         }
         if ($this->form_validation->run() == FALSE) {
